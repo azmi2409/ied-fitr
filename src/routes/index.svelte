@@ -12,6 +12,13 @@
 
 <svelte:head>
 	<title>Selamat Idul Fitri - Kel. Abdul Hasim</title>
+	<meta property="og:title" content="Selamat Idul Fitri - Kel. Abdul Hasim" />
+	<meta
+		property="og:description"
+		content="Selamat Idul Fitri, kelurahan Abdul Hasim, Kec. Kedungkandang, Kabupaten Sukoharjo"
+	/>
+	<meta property="og:image" content="https://ied-fitr.vercel.app/meta.png" />
+	<meta property="og:type" content="website" />
 	<meta name="description" content="Selamat Idul Fitri - Kel. Abdul Hasim" />
 </svelte:head>
 
