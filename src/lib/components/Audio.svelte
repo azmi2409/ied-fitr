@@ -1,25 +1,33 @@
 <script>
 	import Icons from '@iconify/svelte';
 	import { onMount } from 'svelte';
+	import { Howl, Howler } from 'howler';
+
+	const songs = new Howl({
+		src: ['song.mp3'],
+		loop: true,
+		html5: true,
+		preload: true,
+		autoplay: true
+	});
 	let audio = true;
 
 	onMount(() => {
-		setTimeout(() => {
-			document.getElementById('song').play();
-		}, 1000);
+		songs.once('load', () => {
+			songs.play();
+		});
 	});
 
 	function toggleAudio() {
 		audio = !audio;
 		if (audio) {
-			document.getElementById('song').play();
+			songs.play();
 		} else {
-			document.getElementById('song').pause();
+			songs.pause();
 		}
 	}
 </script>
 
-<audio id="song" src="song.mp3" type="audio/mpeg" autoplay loop />
 <div class="fixed top-0 right-0 p-5">
 	<div on:click={() => toggleAudio()} class="border-2 rounded-full p-2 cursor-pointer">
 		<Icons
