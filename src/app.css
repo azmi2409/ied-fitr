@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+@font-face {
+	font-family: 'Bottom Heavy';
+	src: url('love.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Millenia';
+	src: url('millenia.ttf') format('truetype');
+}
+@font-face {
+	font-family: 'Tropikal';
+	src: url('tropikal.otf') format('opentype');
+}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	#ied {
+		font-family: 'Bottom Heavy', cursive;
+	}
+
+	#ucapan {
+		font-family: 'Tropikal', sans-serif;
+		line-height: 1.5;
+		-webkit-text-size-adjust: 100%;
+		-webkit-font-smoothing: antialiased;
+	}
+	#heading {
+		font-family: 'Montserrat', sans-serif;
+	}
+}
