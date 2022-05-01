@@ -1,11 +1,17 @@
 <script>
 	import { onMount } from 'svelte';
+	import Audio from '../lib/components/Audio.svelte';
+	import Card from '../lib/components/Card.svelte';
+	import Comment from '../lib/components/Comment.svelte';
 
 	//add animation on mount using animate.css
 	onMount(() => {
 		const animate = document.querySelectorAll('.animate__animated');
 		animate.forEach((element) => {
 			element.classList.add('animate__backInDown');
+		});
+		window.FastCommentsUI(document.getElementById('fastcomments-widget'), {
+			tenantId: 'QQnhHKY25KA'
 		});
 	});
 </script>
@@ -20,27 +26,11 @@
 	<meta property="og:image" content="https://ied-fitr.vercel.app/meta.png" />
 	<meta property="og:type" content="website" />
 	<meta name="description" content="Selamat Idul Fitri - Kel. Abdul Hasim" />
+	<script src="https://cdn.fastcomments.com/js/embed-v2.min.js"></script>
 </svelte:head>
 
-<main class="flex items-center w-screen flex-col">
-	<div class="text-3xl h-full w-full flex justify-center items-center flex-col p-2">
-		<div class="relative animate__animated">
-			<img src="background.png" alt="bg" class="-z-10 rounded-xl invisible max-h-full" />
-			<img src="background.png" alt="bg" class="-z-10 rounded-xl absolute inset-0 max-h-full" />
-			<div class="absolute inset-0 text-center text-amber-800">
-				<div id="ucapan" class="py-20 px-10 flex flex-col justify-around h-full uppercase">
-					<p class="capitalize animate__animated font-semibold animate__delay-1s" id="heading">
-						Abdul Hasim dan keluarga mengucapkan :
-					</p>
-					<p class="animate__animated animate__delay-2s">selamat hari raya</p>
-					<p class="animate__animated capitalize text-5xl animate__delay-2s" id="ied">Idul Fitri</p>
-					<p class="font-bold animate__animated animate__delay-2s">1443 H</p>
-					<p class="uppercase px-5 animate__animated text-base animate__delay-3s">
-						TaqabbalallaHu minna wa minkum Taqabbal ya kariim minal aidin wal faidzin mohon maaf
-						lahir dan batin
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<main id="main" class="flex items-center w-screen flex-col gap-5">
+	<Card />
+	<Comment />
+	<Audio />
 </main>
